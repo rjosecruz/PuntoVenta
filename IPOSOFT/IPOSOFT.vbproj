@@ -1,0 +1,672 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E31D9BCA-38CF-43C4-91D6-892F239D77E4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Sub Main</StartupObject>
+    <RootNamespace>IPOSOFT</RootNamespace>
+    <AssemblyName>IPOSOFT</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>IPOSOFT.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>IPOSOFT.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar.Layout, Version=12.5.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar.Schedule, Version=12.5.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2, Version=12.5.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.TreeGX, Version=12.5.0.2, Culture=neutral, PublicKeyToken=cfcbd7476b2389d1, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.9.8\Assemblies\v2.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.Ribbon">
+      <HintPath>..\..\..\..\..\Downloads\RibbonSource0.4\System.Windows.Forms.Ribbon\RibbonDemo\bin\Debug\System.Windows.Forms.Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="almacen\almacen.vb" />
+    <Compile Include="almacen\frmalmacenes.Designer.vb">
+      <DependentUpon>frmalmacenes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="almacen\frmalmacenes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="almacen\frmconsultaralmacen.Designer.vb">
+      <DependentUpon>frmconsultaralmacen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="almacen\frmconsultaralmacen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="almacen\frmcrearalmacen.Designer.vb">
+      <DependentUpon>frmcrearalmacen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="almacen\frmcrearalmacen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="almacen\frmmodificaralmacen.Designer.vb">
+      <DependentUpon>frmmodificaralmacen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="almacen\frmmodificaralmacen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="almacen\repositorioAlmacen.vb" />
+    <Compile Include="clasificacion\clasificacion.vb" />
+    <Compile Include="clasificacion\frmconsultarcategoria.Designer.vb">
+      <DependentUpon>frmconsultarcategoria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="clasificacion\frmconsultarcategoria.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clasificacion\frmcrearclasificacion.Designer.vb">
+      <DependentUpon>frmcrearclasificacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="clasificacion\frmcrearclasificacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clasificacion\frmeditarclasificacion.Designer.vb">
+      <DependentUpon>frmeditarclasificacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="clasificacion\frmeditarclasificacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clasificacion\repoclasificacion.vb" />
+    <Compile Include="cliente\cliente.vb" />
+    <Compile Include="cliente\frmbuscarcliente.Designer.vb">
+      <DependentUpon>frmbuscarcliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cliente\frmbuscarcliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cliente\frmclientes.Designer.vb">
+      <DependentUpon>frmclientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cliente\frmclientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cliente\frmconsultarcliente.Designer.vb">
+      <DependentUpon>frmconsultarcliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cliente\frmconsultarcliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cliente\frmconsultarzona.Designer.vb">
+      <DependentUpon>frmconsultarzona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cliente\frmconsultarzona.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cliente\frmcrearcliente.Designer.vb">
+      <DependentUpon>frmcrearcliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cliente\frmcrearcliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cliente\frmcrearzona.Designer.vb">
+      <DependentUpon>frmcrearzona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cliente\frmcrearzona.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cliente\frmeditarcliente.Designer.vb">
+      <DependentUpon>frmeditarcliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cliente\frmeditarcliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cliente\frmeditarzona.Designer.vb">
+      <DependentUpon>frmeditarzona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cliente\frmeditarzona.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cliente\frmzonacliente.Designer.vb">
+      <DependentUpon>frmzonacliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cliente\frmzonacliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cliente\repocliente.vb" />
+    <Compile Include="cliente\Zona.vb" />
+    <Compile Include="cliente\zonaRepositorio.vb" />
+    <Compile Include="compras\compra.vb" />
+    <Compile Include="compras\detalleCompra.vb" />
+    <Compile Include="compras\encabezadoCompra.vb" />
+    <Compile Include="compras\frmcompras.Designer.vb">
+      <DependentUpon>frmcompras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="compras\frmcompras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="compras\frmcrearcompra.Designer.vb">
+      <DependentUpon>frmcrearcompra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="compras\frmcrearcompra.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="compras\frmeditarcompra.Designer.vb">
+      <DependentUpon>frmeditarcompra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="compras\frmeditarcompra.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="compras\repositoriocompras.vb" />
+    <Compile Include="configuraciones\connection.vb" />
+    <Compile Include="configuraciones\Utils.vb" />
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clasificacion\frmclasificacion.Designer.vb">
+      <DependentUpon>frmclasificacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="clasificacion\frmclasificacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="helpers\repositorioHelpers.vb" />
+    <Compile Include="helpers\tipodocumento.vb" />
+    <Compile Include="impuesto\frmconsultar.Designer.vb">
+      <DependentUpon>frmconsultar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="impuesto\frmconsultar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="impuesto\frmcrearimpuesto.Designer.vb">
+      <DependentUpon>frmcrearimpuesto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="impuesto\frmcrearimpuesto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="impuesto\frmeditarimpuesto.Designer.vb">
+      <DependentUpon>frmeditarimpuesto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="impuesto\frmeditarimpuesto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="impuesto\frmimpuestos.Designer.vb">
+      <DependentUpon>frmimpuestos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="impuesto\frmimpuestos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="impuesto\impuesto.vb" />
+    <Compile Include="impuesto\repoimpuesto.vb" />
+    <Compile Include="origen.vb" />
+    <Compile Include="pagosventas\frmpagar.Designer.vb">
+      <DependentUpon>frmpagar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="pagosventas\frmpagar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pagosventas\frmpagosfactura.Designer.vb">
+      <DependentUpon>frmpagosfactura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="pagosventas\frmpagosfactura.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pagosventas\pago.vb" />
+    <Compile Include="pagosventas\repositorioPago.vb" />
+    <Compile Include="Producto\frmbuscarproducto.Designer.vb">
+      <DependentUpon>frmbuscarproducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Producto\frmbuscarproducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producto\frmconsultarproducto.Designer.vb">
+      <DependentUpon>frmconsultarproducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Producto\frmconsultarproducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmmenu.Designer.vb">
+      <DependentUpon>frmmenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmmenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inicio.vb" />
+    <Compile Include="Producto\frmcrearproducto.Designer.vb">
+      <DependentUpon>frmcrearproducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Producto\frmcrearproducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producto\frmeditarproducto.Designer.vb">
+      <DependentUpon>frmeditarproducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Producto\frmeditarproducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producto\frmlistaprodutos.Designer.vb">
+      <DependentUpon>frmlistaprodutos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Producto\frmlistaprodutos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producto\producto.vb" />
+    <Compile Include="Producto\productoalmacen.vb" />
+    <Compile Include="Producto\repositorioProducto.vb" />
+    <Compile Include="Marca\frmconsultarmarca.Designer.vb">
+      <DependentUpon>frmconsultarmarca.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Marca\frmconsultarmarca.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marca\frmcrearmarca.Designer.vb">
+      <DependentUpon>frmcrearmarca.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Marca\frmcrearmarca.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marca\frmeditarmarca.Designer.vb">
+      <DependentUpon>frmeditarmarca.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Marca\frmeditarmarca.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marca\frmmarcas.Designer.vb">
+      <DependentUpon>frmmarcas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Marca\frmmarcas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marca\marca.vb" />
+    <Compile Include="Marca\repomarca.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Producto\repositorioProductoAlmacen.vb" />
+    <Compile Include="proveedor\frmbuscarproveedor.Designer.vb">
+      <DependentUpon>frmbuscarproveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="proveedor\frmbuscarproveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="proveedor\frmconsultarproveedor.Designer.vb">
+      <DependentUpon>frmconsultarproveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="proveedor\frmconsultarproveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="proveedor\frmcrearproveedor.Designer.vb">
+      <DependentUpon>frmcrearproveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="proveedor\frmcrearproveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="proveedor\frmeditarproveedor.Designer.vb">
+      <DependentUpon>frmeditarproveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="proveedor\frmeditarproveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="proveedor\frmproveedores.Designer.vb">
+      <DependentUpon>frmproveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="proveedor\frmproveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="proveedor\proveedor.vb" />
+    <Compile Include="proveedor\repoitorioProveedor.vb" />
+    <Compile Include="vendedor\frmconsultarvendedor.Designer.vb">
+      <DependentUpon>frmconsultarvendedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vendedor\frmconsultarvendedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vendedor\frmcrearvendedor.Designer.vb">
+      <DependentUpon>frmcrearvendedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vendedor\frmcrearvendedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vendedor\frmeditarvendedor.Designer.vb">
+      <DependentUpon>frmeditarvendedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vendedor\frmeditarvendedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vendedor\frmlistavendedores.Designer.vb">
+      <DependentUpon>frmlistavendedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vendedor\frmlistavendedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vendedor\repoVendedor.vb" />
+    <Compile Include="vendedor\vendedor.vb" />
+    <Compile Include="ventas\detallefactura.vb" />
+    <Compile Include="ventas\encabezadofactura.vb" />
+    <Compile Include="ventas\factura.vb" />
+    <Compile Include="ventas\frmcrearfactura.Designer.vb">
+      <DependentUpon>frmcrearfactura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ventas\frmcrearfactura.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ventas\frmventas.Designer.vb">
+      <DependentUpon>frmventas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ventas\frmventas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ventas\repositorioventa.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="almacen\frmalmacenes.resx">
+      <DependentUpon>frmalmacenes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="almacen\frmconsultaralmacen.resx">
+      <DependentUpon>frmconsultaralmacen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="almacen\frmcrearalmacen.resx">
+      <DependentUpon>frmcrearalmacen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="almacen\frmmodificaralmacen.resx">
+      <DependentUpon>frmmodificaralmacen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clasificacion\frmconsultarcategoria.resx">
+      <DependentUpon>frmconsultarcategoria.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clasificacion\frmcrearclasificacion.resx">
+      <DependentUpon>frmcrearclasificacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clasificacion\frmeditarclasificacion.resx">
+      <DependentUpon>frmeditarclasificacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cliente\frmbuscarcliente.resx">
+      <DependentUpon>frmbuscarcliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cliente\frmclientes.resx">
+      <DependentUpon>frmclientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cliente\frmconsultarcliente.resx">
+      <DependentUpon>frmconsultarcliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cliente\frmconsultarzona.resx">
+      <DependentUpon>frmconsultarzona.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cliente\frmcrearcliente.resx">
+      <DependentUpon>frmcrearcliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cliente\frmcrearzona.resx">
+      <DependentUpon>frmcrearzona.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cliente\frmeditarcliente.resx">
+      <DependentUpon>frmeditarcliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cliente\frmeditarzona.resx">
+      <DependentUpon>frmeditarzona.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cliente\frmzonacliente.resx">
+      <DependentUpon>frmzonacliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="compras\frmcompras.resx">
+      <DependentUpon>frmcompras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="compras\frmcrearcompra.resx">
+      <DependentUpon>frmcrearcompra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="compras\frmeditarcompra.resx">
+      <DependentUpon>frmeditarcompra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clasificacion\frmclasificacion.resx">
+      <DependentUpon>frmclasificacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="impuesto\frmconsultar.resx">
+      <DependentUpon>frmconsultar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="impuesto\frmcrearimpuesto.resx">
+      <DependentUpon>frmcrearimpuesto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="impuesto\frmeditarimpuesto.resx">
+      <DependentUpon>frmeditarimpuesto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="impuesto\frmimpuestos.resx">
+      <DependentUpon>frmimpuestos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pagosventas\frmpagar.resx">
+      <DependentUpon>frmpagar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pagosventas\frmpagosfactura.resx">
+      <DependentUpon>frmpagosfactura.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producto\frmbuscarproducto.resx">
+      <DependentUpon>frmbuscarproducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producto\frmconsultarproducto.resx">
+      <DependentUpon>frmconsultarproducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmmenu.resx">
+      <DependentUpon>frmmenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producto\frmcrearproducto.resx">
+      <DependentUpon>frmcrearproducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producto\frmeditarproducto.resx">
+      <DependentUpon>frmeditarproducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producto\frmlistaprodutos.resx">
+      <DependentUpon>frmlistaprodutos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marca\frmconsultarmarca.resx">
+      <DependentUpon>frmconsultarmarca.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marca\frmcrearmarca.resx">
+      <DependentUpon>frmcrearmarca.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marca\frmeditarmarca.resx">
+      <DependentUpon>frmeditarmarca.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marca\frmmarcas.resx">
+      <DependentUpon>frmmarcas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="proveedor\frmbuscarproveedor.resx">
+      <DependentUpon>frmbuscarproveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="proveedor\frmconsultarproveedor.resx">
+      <DependentUpon>frmconsultarproveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="proveedor\frmcrearproveedor.resx">
+      <DependentUpon>frmcrearproveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="proveedor\frmeditarproveedor.resx">
+      <DependentUpon>frmeditarproveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="proveedor\frmproveedores.resx">
+      <DependentUpon>frmproveedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vendedor\frmconsultarvendedor.resx">
+      <DependentUpon>frmconsultarvendedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vendedor\frmcrearvendedor.resx">
+      <DependentUpon>frmcrearvendedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vendedor\frmeditarvendedor.resx">
+      <DependentUpon>frmeditarvendedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vendedor\frmlistavendedores.resx">
+      <DependentUpon>frmlistavendedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ventas\frmcrearfactura.resx">
+      <DependentUpon>frmcrearfactura.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ventas\frmventas.resx">
+      <DependentUpon>frmventas.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart-plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\food-variant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\store.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cash-multiple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account-multiple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tooltip-edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file-find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\content-save %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\window-close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eraser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\google-maps.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="inventario\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account-multiple1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account-search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cloud-upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cash-usd.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
